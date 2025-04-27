@@ -1,0 +1,62 @@
+name: Build and Publish Package
+
+on:
+  release:
+    types: [created]
+  workflow_dispatch:  # Allows manual triggering
+    inputs:
+      version:
+        description: 'Version to publish (semver format: x.y.z, patch, minor, or major)'
+        required: false
+        type: string
+        default: 'patch'
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Update version from release
+        if: github.event_name == 'release'
+        run: |
+          # Extract version from GitHub release tag (without 'v' prefix if present)
+          VERSION=${GITHUB_REF#refs/tags/}
+          VERSION=${VERSION#v}
+          
+          # Update package.json version
+          npm version $VERSION --no-git-tag-version
+          echo "Updated package.json to version $VERSION"
+
+      - name: Update version for manual trigger
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          # Use the provided version input or default to patch
+          VERSION=${{ github.event.inputs.version }}
+          
+          # Update package.json version
+          npm version $VERSION --no-git-tag-version
+          
+          # Get the new version number for logging
+          NEW_VERSION=$(node -p "require('./package.json').version")
+          echo "Updated package.json to version $NEW_VERSION"
+
+      - name: Build
+        run: npm run build
+
+      - name: Publish to npm
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
