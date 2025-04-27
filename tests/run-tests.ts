@@ -1,4 +1,4 @@
-import { TestExecutor, BaseAdapter, APIAdapter } from 'craft-a-tester';
+import { TestExecutor, BaseAdapter, APIAdapter } from '@craftapit/tester';
 import * as path from 'path';
 import * as fs from 'fs/promises';
 

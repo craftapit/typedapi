@@ -242,11 +242,11 @@ export const UserSchema = z.object({
 });
 
 // You can also use the built-in error schema
-import { ErrorSchema } from 'typedapi';
+import { ErrorSchema } from '@craftapit/typedapi';
 
 // routes.ts
 import { UserSchema } from './schemas';
-import { ErrorSchema } from 'typedapi';
+import { ErrorSchema } from '@craftapit/typedapi';
 
 const getUserRoute = Get('/users/:userId', {
   params: z.object({ userId: z.string() }),
@@ -374,7 +374,7 @@ When validation fails, TypedAPI automatically returns a `400 Bad Request` respon
 TypedAPI exports a standard error schema that you can use in your route definitions:
 
 ```typescript
-import { ErrorSchema } from 'typedapi';
+import { ErrorSchema } from '@craftapit/typedapi';
 
 const createUserRoute = Post('/users', {
   requestBody: UserSchema,

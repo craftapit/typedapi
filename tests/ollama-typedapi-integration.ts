@@ -3,9 +3,9 @@
  * It demonstrates how to use the LLM-powered testing capabilities for TypedAPI contracts.
  */
 import * as path from 'path';
-import { OllamaAdapter } from 'craft-a-tester';
-import { TypedAPIAdapter, TypedAPIAddon } from 'craft-a-tester-typedapi';
-import { TestExecutor, CapabilityRegistry } from 'craft-a-tester';
+import { OllamaAdapter } from '@craftapit/tester';
+import { TypedAPIAdapter, TypedAPIAddon } from '@craftapit/typedapi-tester-addon';
+import { TestExecutor, CapabilityRegistry } from '@craftapit/tester';
 
 /**
  * Main function to run TypedAPI tests with Ollama

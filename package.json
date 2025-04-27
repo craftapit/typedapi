@@ -1,7 +1,10 @@
 {
-  "name": "typedapi",
+  "name": "@craftapit/typedapi",
   "version": "0.1.0",
   "description": "Type-safe API development framework for Express with Zod validation and OpenAPI documentation",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -44,8 +47,8 @@
   "devDependencies": {
     "@types/express": "^4",
     "@types/node": "^22",
-    "craft-a-tester": "^0.1.2",	
-    "craft-a-tester-typedapi": "^0.1.1",
+    "@craftapit/tester": "^0.1.2",	
+    "@craftapit/typedapi-tester-addon": "^0.1.1",
     "dotenv": "^16.5.0",
     "ts-node": "^10.9.1",
     "typescript": "^5"

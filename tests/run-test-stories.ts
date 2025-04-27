@@ -5,8 +5,8 @@
  * using any LLM adapter (Ollama, Anthropic, OpenAI).
  */
 import * as path from 'path';
-import { createTestRunner } from 'craft-a-tester';
-import { TypedAPIAdapter, TypedAPIAddon } from 'craft-a-tester-typedapi';
+import { createTestRunner } from '@craftapit/tester';
+import { TypedAPIAdapter, TypedAPIAddon } from '@craftapit/typedapi-tester-addon';
 
 async function runTestStories() {
   // Get the base stories directory

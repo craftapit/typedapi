@@ -1,12 +1,12 @@
-import { TestExecutor, CapabilityRegistry } from 'craft-a-tester';
-import { TypedAPIAddon } from '../../craft-a-tester-typedapi/src';
+import { TestExecutor, CapabilityRegistry } from '@craftapit/tester';
+import { TypedAPIAddon } from '../../typedapi-tester-addon/src';
 import * as path from 'path';
 
 /**
- * Run TypedAPI tests using craft-a-tester and craft-a-tester-typedapi
+ * Run TypedAPI tests using @craftapit/tester and @craftapit/typedapi-tester-addon
  */
 async function runTypedApiTests() {
-  console.log("\n========== Running TypedAPI Tests with craft-a-tester-typedapi ==========\n");
+  console.log("\n========== Running TypedAPI Tests with @craftapit/typedapi-tester-addon ==========\n");
 
   try {
     // Create capability registry

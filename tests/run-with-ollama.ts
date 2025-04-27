@@ -1,5 +1,5 @@
-import { TestExecutor, CapabilityRegistry, OllamaAdapter, LLMAdapter } from 'craft-a-tester';
-import { TypedAPIAddon } from '../../craft-a-tester-typedapi/src';
+import { TestExecutor, CapabilityRegistry, OllamaAdapter, LLMAdapter } from '@craftapit/tester';
+import { TypedAPIAddon } from '../../typedapi-tester-addon/src';
 import * as path from 'path';
 
 /**

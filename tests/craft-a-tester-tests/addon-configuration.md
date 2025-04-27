@@ -3,7 +3,7 @@
 ## Context
 - Type: TypedAPI
 - TestType: Configuration
-- AddonName: craft-a-tester-typedapi
+- AddonName: @craftapit/typedapi-tester-addon
 
 ## Scenario: Configure Contract Base Path
 
@@ -111,7 +111,7 @@
 2. **When** I register the TypedAPI addon
    ```typescript
    import { TestExecutor } from 'craft-a-tester';
-   import { TypedAPIAddon } from 'craft-a-tester-typedapi';
+   import { TypedAPIAddon } from '@craftapit/typedapi-tester-addon';
    
    const executor = new TestExecutor();
    const typedAPIAddon = new TypedAPIAddon();
